@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Domain", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Services", "src\Services\InfrastructureService\Infrastructure.Services\Infrastructure.Services.csproj", "{8FD15316-4864-4C82-BF51-8FE33A2055DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBff.API", "src\APIGateways\Aggregators\WebBff.API\WebBff.API.csproj", "{01A338B8-B12C-4981-AC78-56D474990985}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{8FD15316-4864-4C82-BF51-8FE33A2055DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD15316-4864-4C82-BF51-8FE33A2055DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD15316-4864-4C82-BF51-8FE33A2055DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A338B8-B12C-4981-AC78-56D474990985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A338B8-B12C-4981-AC78-56D474990985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A338B8-B12C-4981-AC78-56D474990985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A338B8-B12C-4981-AC78-56D474990985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +149,7 @@ Global
 		{5A356638-BD09-443D-B0FE-670222C89287} = {EB30FE4F-432A-4B0A-8836-0DD3A5C59566}
 		{0FF25A92-88E5-4055-9BE2-233A32617BFD} = {EB30FE4F-432A-4B0A-8836-0DD3A5C59566}
 		{8FD15316-4864-4C82-BF51-8FE33A2055DB} = {EB30FE4F-432A-4B0A-8836-0DD3A5C59566}
+		{01A338B8-B12C-4981-AC78-56D474990985} = {D77FFE7E-9A3B-4C89-A4E7-EB15CEE8838A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28AF60AF-B945-475B-B961-EB5DDF72F50B}
