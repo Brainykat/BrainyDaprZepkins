@@ -35,31 +35,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinanceSvc", "FinanceSvc", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureSvc", "InfrastructureSvc", "{EB30FE4F-432A-4B0A-8836-0DD3A5C59566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.API", "src\Services\CustomerService\Customers.API\Customers.API.csproj", "{47440A5F-9AAA-486C-A6C0-707151659B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.API", "src\Services\CustomerService\Customers.API\Customers.API.csproj", "{47440A5F-9AAA-486C-A6C0-707151659B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Domain", "src\Services\CustomerService\Customers.Domain\Customers.Domain.csproj", "{AB5B02F4-7F79-47B6-A54D-AA1453569784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Domain", "src\Services\CustomerService\Customers.Domain\Customers.Domain.csproj", "{AB5B02F4-7F79-47B6-A54D-AA1453569784}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Data", "src\Services\CustomerService\Customers.Data\Customers.Data.csproj", "{1FC17204-35EF-4D54-8E7A-A40D789C1F4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Data", "src\Services\CustomerService\Customers.Data\Customers.Data.csproj", "{1FC17204-35EF-4D54-8E7A-A40D789C1F4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Services", "src\Services\CustomerService\Customers.Services\Customers.Services.csproj", "{9322A53F-0BF0-458B-8ABE-FC1598A66A8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Services", "src\Services\CustomerService\Customers.Services\Customers.Services.csproj", "{9322A53F-0BF0-458B-8ABE-FC1598A66A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance.API", "src\Services\FinanceService\Finance.API\Finance.API.csproj", "{0A3933AC-9C36-419D-9CB2-C69D6985CB58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finance.API", "src\Services\FinanceService\Finance.API\Finance.API.csproj", "{0A3933AC-9C36-419D-9CB2-C69D6985CB58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance.Data", "src\Services\FinanceService\Finance.Data\Finance.Data.csproj", "{DDCBE352-B523-4C12-906B-DB5FFB4D0902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finance.Data", "src\Services\FinanceService\Finance.Data\Finance.Data.csproj", "{DDCBE352-B523-4C12-906B-DB5FFB4D0902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance.Domain", "src\Services\FinanceService\Finance.Domain\Finance.Domain.csproj", "{0FCF6328-0073-4037-9361-F5847DEC481E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finance.Domain", "src\Services\FinanceService\Finance.Domain\Finance.Domain.csproj", "{0FCF6328-0073-4037-9361-F5847DEC481E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance.Services", "src\Services\FinanceService\Finance.Services\Finance.Services.csproj", "{07ADC879-224D-483C-8E9D-12B0C77EDF61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finance.Services", "src\Services\FinanceService\Finance.Services\Finance.Services.csproj", "{07ADC879-224D-483C-8E9D-12B0C77EDF61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.API", "src\Services\InfrastructureService\Infrastructure.API\Infrastructure.API.csproj", "{F92F216A-9A54-4A22-A2F5-1D357D5A027D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.API", "src\Services\InfrastructureService\Infrastructure.API\Infrastructure.API.csproj", "{F92F216A-9A54-4A22-A2F5-1D357D5A027D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data", "src\Services\InfrastructureService\Infrastructure.Data\Infrastructure.Data.csproj", "{5A356638-BD09-443D-B0FE-670222C89287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data", "src\Services\InfrastructureService\Infrastructure.Data\Infrastructure.Data.csproj", "{5A356638-BD09-443D-B0FE-670222C89287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Domain", "src\Services\InfrastructureService\Infrastructure.Domain\Infrastructure.Domain.csproj", "{0FF25A92-88E5-4055-9BE2-233A32617BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Domain", "src\Services\InfrastructureService\Infrastructure.Domain\Infrastructure.Domain.csproj", "{0FF25A92-88E5-4055-9BE2-233A32617BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Services", "src\Services\InfrastructureService\Infrastructure.Services\Infrastructure.Services.csproj", "{8FD15316-4864-4C82-BF51-8FE33A2055DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Services", "src\Services\InfrastructureService\Infrastructure.Services\Infrastructure.Services.csproj", "{8FD15316-4864-4C82-BF51-8FE33A2055DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBff.API", "src\APIGateways\Aggregators\WebBff.API\WebBff.API.csproj", "{01A338B8-B12C-4981-AC78-56D474990985}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBff.API", "src\APIGateways\Aggregators\WebBff.API\WebBff.API.csproj", "{01A338B8-B12C-4981-AC78-56D474990985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedBase", "src\BuildingBlocks\SharedBase\SharedBase.csproj", "{046AD46B-2709-4864-8EC4-B68406330DEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +121,10 @@ Global
 		{01A338B8-B12C-4981-AC78-56D474990985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01A338B8-B12C-4981-AC78-56D474990985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01A338B8-B12C-4981-AC78-56D474990985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046AD46B-2709-4864-8EC4-B68406330DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046AD46B-2709-4864-8EC4-B68406330DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046AD46B-2709-4864-8EC4-B68406330DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046AD46B-2709-4864-8EC4-B68406330DEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{0FF25A92-88E5-4055-9BE2-233A32617BFD} = {EB30FE4F-432A-4B0A-8836-0DD3A5C59566}
 		{8FD15316-4864-4C82-BF51-8FE33A2055DB} = {EB30FE4F-432A-4B0A-8836-0DD3A5C59566}
 		{01A338B8-B12C-4981-AC78-56D474990985} = {D77FFE7E-9A3B-4C89-A4E7-EB15CEE8838A}
+		{046AD46B-2709-4864-8EC4-B68406330DEC} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28AF60AF-B945-475B-B961-EB5DDF72F50B}
