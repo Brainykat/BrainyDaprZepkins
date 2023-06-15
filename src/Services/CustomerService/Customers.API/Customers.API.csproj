@@ -56,6 +56,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj" />
     <ProjectReference Include="..\Customers.Data\Customers.Data.csproj" />
+    <ProjectReference Include="..\Customers.Services\Customers.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,8 @@
 ﻿using Customers.Data;
+using Customers.Data.Repos;
+using Customers.Domain.Interfaces;
+using Customers.Services.Interfaces;
+using Customers.Services.Services;
 using Dapr.Client;
 using Dapr.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
@@ -63,6 +67,8 @@ public static class ProgramExtensions
         //builder.Services.AddScoped<IEventBus, DaprEventBus>();
         //builder.Services.AddScoped<OrderStatusChangedToAwaitingStockValidationIntegrationEventHandler>();
         //builder.Services.AddScoped<OrderStatusChangedToPaidIntegrationEventHandler>();
+        builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
+        builder.Services.AddTransient<ICustomerService, CustomerService>();
     }
 
     public static void AddCustomDatabase(this WebApplicationBuilder builder)
