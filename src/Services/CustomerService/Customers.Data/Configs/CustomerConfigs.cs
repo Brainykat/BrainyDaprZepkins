@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using Customers.Domain.Entities;
+using SharedBase.ValueObjects;
 
 namespace Customers.Data.Configs
 {
-    internal class CustomerConfigs : IEntityTypeConfiguration<Customer>
+    public class CustomerConfigs : IEntityTypeConfiguration<Customer>
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
@@ -20,6 +21,11 @@ namespace Customers.Data.Configs
                 f.Property(n => n.First).IsRequired().HasMaxLength(20);
                 f.Property(n => n.Middle).HasMaxLength(20);
             });
+            //Seeding
+            builder.HasData(
+                Customer.Create(Name.Create("Kariuki", "Peter", "Sawa"), "+254721937200", "chris@brainykat.com"),
+                Customer.Create(Name.Create("Kibaki", "Mwai"), "+254721007200", "kibaki@brainykat.com")
+                );
         }
     }
 }
