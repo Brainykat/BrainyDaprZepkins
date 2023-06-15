@@ -61,13 +61,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Services", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBff.API", "src\APIGateways\Aggregators\WebBff.API\WebBff.API.csproj", "{01A338B8-B12C-4981-AC78-56D474990985}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedBase", "src\BuildingBlocks\SharedBase\SharedBase.csproj", "{046AD46B-2709-4864-8EC4-B68406330DEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedBase", "src\BuildingBlocks\SharedBase\SharedBase.csproj", "{046AD46B-2709-4864-8EC4-B68406330DEC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dtos", "Dtos", "{C9FD1334-B284-4DC7-B5AA-3C9333249868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDtos", "src\BuildingBlocks\Dtos\CustomerDtos\CustomerDtos.csproj", "{50E88AC6-D515-4F11-9C48-FF93F6878E37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerDtos", "src\BuildingBlocks\Dtos\CustomerDtos\CustomerDtos.csproj", "{50E88AC6-D515-4F11-9C48-FF93F6878E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHosts", "src\BuildingBlocks\WebHosts\WebHosts.csproj", "{1102858A-A6A1-453D-A110-5163B89EA754}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHosts", "src\BuildingBlocks\WebHosts\WebHosts.csproj", "{1102858A-A6A1-453D-A110-5163B89EA754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthchecks", "src\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj", "{B8C2B879-7D72-4079-821B-6C3D32C79A9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +141,10 @@ Global
 		{1102858A-A6A1-453D-A110-5163B89EA754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1102858A-A6A1-453D-A110-5163B89EA754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1102858A-A6A1-453D-A110-5163B89EA754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +180,7 @@ Global
 		{C9FD1334-B284-4DC7-B5AA-3C9333249868} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
 		{50E88AC6-D515-4F11-9C48-FF93F6878E37} = {C9FD1334-B284-4DC7-B5AA-3C9333249868}
 		{1102858A-A6A1-453D-A110-5163B89EA754} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
+		{B8C2B879-7D72-4079-821B-6C3D32C79A9E} = {0A098333-B841-43B3-BA11-6E2E7E9B6A2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28AF60AF-B945-475B-B961-EB5DDF72F50B}
