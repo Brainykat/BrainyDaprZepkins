@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   <RootNamespace>Brainykat</RootNamespace>
+  <UserSecretsId>bcea51fb-c096-4b09-ab3f-a4ceab6fba55</UserSecretsId>
+  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  <DockerfileContext>..\..\..\..</DockerfileContext>
+  <DockerComposeProjectPath>..\..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <!--<ItemGroup>
@@ -43,6 +47,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="5.2.2" />
@@ -50,10 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\AuthorizeAuthenticate\AuthorizeAuthenticate.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj" />
     <ProjectReference Include="..\Customers.Data\Customers.Data.csproj" />
     <ProjectReference Include="..\Customers.Services\Customers.Services.csproj" />

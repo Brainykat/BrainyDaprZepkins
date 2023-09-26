@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  seq:
+    image: datalust/seq:latest
+
+  # Use the Azure SQL Edge version so we can also run on Apple Sillicon (thanks @ChristianWeyer)
+  sqldata:
+    image: mcr.microsoft.com/azure-sql-edge
+
+  zipkin:
+    image: openzipkin/zipkin-slim:latest
+
+  
+  customers-api:
+    image: ${DOCKER_REGISTRY-}customersapi
+    build:
+      context: .
+      dockerfile: src/Services/CustomerService/Customers.API/Dockerfile
+
+  customers-api-dapr:
+    image: "daprio/daprd:1.9.4"
+    network_mode: "service:customers-api"
+    depends_on:
+      - customers-api
+
+  dapr-placement:
+    image: "daprio/dapr:1.9.4"

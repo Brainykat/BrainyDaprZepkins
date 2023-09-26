@@ -1,6 +1,7 @@
 ﻿using Customers.Domain.Entities;
 using Customers.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace Customers.Data.Repos
 {
@@ -11,6 +12,7 @@ namespace Customers.Data.Repos
         public CustomerRepository(CustomersContext context)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
+            //context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
         public async Task<List<Customer>> GetCustomers() =>
          await context.Customers.AsNoTracking().ToListAsync();

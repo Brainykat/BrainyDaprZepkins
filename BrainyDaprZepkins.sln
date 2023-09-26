@@ -10,6 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{A60C3AE5-0885-47D8-BDD3-14EC77F5F7E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{022D54AB-DC25-4721-BA0A-233BDAB3CD0E}"
+	ProjectSection(SolutionItems) = preProject
+		brainykat-secrets.json = brainykat-secrets.json
+		brainykat-secretstore.yaml = brainykat-secretstore.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{F285F59C-BC86-4DDD-9CE9-E797E7A96F07}"
 EndProject
@@ -69,7 +73,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerDtos", "src\Buildin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHosts", "src\BuildingBlocks\WebHosts\WebHosts.csproj", "{1102858A-A6A1-453D-A110-5163B89EA754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthchecks", "src\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj", "{B8C2B879-7D72-4079-821B-6C3D32C79A9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Healthchecks", "src\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj", "{B8C2B879-7D72-4079-821B-6C3D32C79A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizeAuthenticate", "src\BuildingBlocks\AuthorizeAuthenticate\AuthorizeAuthenticate.csproj", "{8EE675FE-A8D2-4346-A66D-756F9AC024F5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +153,14 @@ Global
 		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8C2B879-7D72-4079-821B-6C3D32C79A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE675FE-A8D2-4346-A66D-756F9AC024F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE675FE-A8D2-4346-A66D-756F9AC024F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE675FE-A8D2-4346-A66D-756F9AC024F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE675FE-A8D2-4346-A66D-756F9AC024F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -181,6 +197,7 @@ Global
 		{50E88AC6-D515-4F11-9C48-FF93F6878E37} = {C9FD1334-B284-4DC7-B5AA-3C9333249868}
 		{1102858A-A6A1-453D-A110-5163B89EA754} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
 		{B8C2B879-7D72-4079-821B-6C3D32C79A9E} = {0A098333-B841-43B3-BA11-6E2E7E9B6A2E}
+		{8EE675FE-A8D2-4346-A66D-756F9AC024F5} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28AF60AF-B945-475B-B961-EB5DDF72F50B}

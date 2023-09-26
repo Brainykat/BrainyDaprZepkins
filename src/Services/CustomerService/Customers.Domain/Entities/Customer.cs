@@ -15,8 +15,8 @@ namespace Customers.Domain.Entities
             Email = email ?? throw new ArgumentNullException(nameof(email));
         }
         private Customer() { }
-        public Name Name { get; private set; }
-        public string Phone { get; private set; }
-        public string Email { get; private set; }
+        public Name Name { get;  set; }
+        public string Phone { get;  set; }
+        public string Email { get;  set; }
     }
 }

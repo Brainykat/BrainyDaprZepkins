@@ -73,8 +73,6 @@ public static class ProgramExtensions
 
     public static void AddCustomDatabase(this WebApplicationBuilder builder)
     {
-
-
         builder.Services.AddDbContext<CustomersContext>(
             options => options.UseSqlServer(builder.Configuration["ConnectionStrings:CustomerDB"]!));
     }
