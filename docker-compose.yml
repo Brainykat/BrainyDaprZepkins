@@ -25,7 +25,7 @@ services:
       - "5411:9411"
 
   
-  customers.api:
+  customers-api:
     image: ${DOCKER_REGISTRY-}customersapi
     build:
       context: .
@@ -42,17 +42,17 @@ services:
       - brainykatsqldata
     
 
-  customers.api-dapr:
+  customers-api-dapr:
     image: "daprio/daprd:latest"
     command: ["./daprd",
-      "-app-id", "customers.api",
+      "-app-id", "customers-api",
       "-app-port", "80",
       "-components-path", "/components",
       "-config", "/configuration/brainykat-config.yaml"
       ]
-    network_mode: "service:customers.api"
+    network_mode: "service:customers-api"
     depends_on:
-      - customers.api
+      - customers-api
     volumes:
       - "./dapr/components/:/components"
       - "./dapr/configuration/:/configuration"

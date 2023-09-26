@@ -1,26 +1,26 @@
 version: '3.4'
 
-services:
-  customers.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80
-      # - IdentityUrl=http://identity-api
-      # - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
-      - SeqServerUrl=http://seq
-    ports:
-      - "5103:80"
-      - "50001:50001"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-  customers.api-dapr:
-    command: ["./daprd",
-      "-app-id", "customers.api",
-      "-app-port", "80",
-      "-components-path", "/components",
-      "-config", "/configuration/brainykat-config.yaml"
-      ]
-    volumes:
-      - "./dapr/components/:/components"
-      - "./dapr/configuration/:/configuration"
+#services:
+  # customers-api:
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_URLS=http://0.0.0.0:80
+  #     # - IdentityUrl=http://identity-api
+  #     # - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
+  #     - SeqServerUrl=http://brainykatseq
+  #   ports:
+  #     - "5103:80"
+  #     - "50001:50001"
+  #   volumes:
+  #     - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+  #     - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  # customers-api-dapr:
+  #   command: ["./daprd",
+  #     "-app-id", "customers-api",
+  #     "-app-port", "80",
+  #     "-components-path", "/components",
+  #     "-config", "/configuration/brainykat-config.yaml"
+  #     ]
+  #   volumes:
+  #     - "./dapr/components/:/components"
+  #     - "./dapr/configuration/:/configuration"
