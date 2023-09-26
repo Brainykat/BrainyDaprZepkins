@@ -1,8 +1,14 @@
 using Customers.API;
+using Customers.Data;
 using HealthChecks.UI.Client;
+using Microsoft.EntityFrameworkCore;
 
 var appName = "Customer API";
 var builder = WebApplication.CreateBuilder(args);
+
+//This is for adding migrations
+//builder.Services.AddDbContext<CustomersContext>(options =>
+//       options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerDB")));
 
 builder.AddCustomConfiguration();
 builder.AddCustomSerilog();

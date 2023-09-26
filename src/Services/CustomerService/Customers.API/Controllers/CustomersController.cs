@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AuthorizeAuthenticate;
+using Google.Api;
 
 namespace Customers.API.Controllers
 {
@@ -27,7 +28,8 @@ namespace Customers.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CustomerDto dto)
-        => await service.Add(dto, HttpContext.User.Claims.GetUserId());
+        => await service.Add(dto, Guid.Empty);
+        //=> await service.Add(dto, HttpContext.User.Claims.GetUserId());
 
         [HttpPut("{customerId:guid}")]
         public async Task<IActionResult> Update(Guid customerId, [FromBody] CustomerDto dto)

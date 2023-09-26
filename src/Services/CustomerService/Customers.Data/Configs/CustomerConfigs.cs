@@ -22,10 +22,10 @@ namespace Customers.Data.Configs
                 f.Property(n => n.Middle).HasMaxLength(20);
             });
             //Seeding
-            builder.HasData(
-                Customer.Create(Name.Create("Kariuki", "Peter", "Sawa"), "+254721937200", "chris@brainykat.com"),
-                Customer.Create(Name.Create("Kibaki", "Mwai"), "+254721007200", "kibaki@brainykat.com")
-                );
+            //builder.HasData(
+            //    Customer.Create(Name.Create("Kariuki", "Peter", "Sawa"), "+254721937200", "chris@brainykat.com"),
+            //    Customer.Create(Name.Create("Kibaki", "Mwai"), "+254721007200", "kibaki@brainykat.com")
+            //    );
         }
     }
 }
