@@ -12,12 +12,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{022D54AB-DC25-4721-BA0A-233BDAB3CD0E}"
 	ProjectSection(SolutionItems) = preProject
 		brainykat-secrets.json = brainykat-secrets.json
-		brainykat-secretstore.yaml = brainykat-secretstore.yaml
+		dapr\components\brainykat-secrets.json = dapr\components\brainykat-secrets.json
+		dapr\components\brainykat-secretstore.yaml = dapr\components\brainykat-secretstore.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{F285F59C-BC86-4DDD-9CE9-E797E7A96F07}"
 	ProjectSection(SolutionItems) = preProject
-		brainykat-config.yaml = brainykat-config.yaml
+		dapr\configuration\brainykat-config.yaml = dapr\configuration\brainykat-config.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{2F6F271F-FF7B-4F2A-BD91-FE06CB55AC7D}"
