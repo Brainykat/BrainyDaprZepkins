@@ -16,6 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{F285F59C-BC86-4DDD-9CE9-E797E7A96F07}"
+	ProjectSection(SolutionItems) = preProject
+		brainykat-config.yaml = brainykat-config.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{2F6F271F-FF7B-4F2A-BD91-FE06CB55AC7D}"
 EndProject
