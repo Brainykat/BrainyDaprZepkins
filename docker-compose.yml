@@ -57,12 +57,46 @@ services:
       - "./dapr/components/:/components"
       - "./dapr/configuration/:/configuration"
 
+  finance-api:
+    image: ${DOCKER_REGISTRY-}financeapi
+    build:
+      context: .
+      dockerfile: src/Services/FinanceService/Finance.API/Dockerfile
+    ports:
+      - "5105:80"
+      - "50001:50001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - RetryMigrations=true
+      - SeqServerUrl=http://brainykatseq
+    depends_on:
+      - brainykatsqldata
+  
+  finance-api-dapr:
+    image: "daprio/daprd:latest"
+    command: ["./daprd",
+      "-app-id", "finance-api",
+      "-app-port", "80",
+      "-components-path", "/components",
+      "-config", "/configuration/brainykat-config.yaml"
+      ]
+    network_mode: "service:finance-api"
+    depends_on:
+      - finance-api
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configuration/:/configuration"
+
   dapr-placement:
     image: "daprio/dapr:latest"
     command: ["./placement", "-port", "50000", "-log-level", "debug"]
     ports:
       - "50000:50000"
 
+
+
 volumes:
   brainykat-sqldata:
     external: false
+
