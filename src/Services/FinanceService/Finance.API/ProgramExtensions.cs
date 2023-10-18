@@ -41,7 +41,7 @@ namespace Finance.API
         public static void AddCustomSwagger(this WebApplicationBuilder builder) =>
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = $"BrainyOnDapr - {AppName}", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = $"BrainyKat OnDapr - {AppName}", Version = "v1" });
             });
 
         public static void UseCustomSwagger(this WebApplication app)
