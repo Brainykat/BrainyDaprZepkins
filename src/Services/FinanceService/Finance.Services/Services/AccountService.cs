@@ -11,16 +11,12 @@ using WebHosts;
 
 namespace Finance.Services.Services
 {
-    
-
     public class AccountService : ControllerBase, IAccountService
     {
         private readonly IAccountRepository repo;
         //private readonly IRaiseBGAccountEvents raiseBGAccountEvents;
         private readonly ILogger<AccountService> logger;
-        public AccountService(IAccountRepository repo, ILogger<AccountService> logger
-
-            )
+        public AccountService(IAccountRepository repo, ILogger<AccountService> logger)
         {
             this.repo = repo ?? throw new ArgumentNullException(nameof(repo));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -33,7 +29,7 @@ namespace Finance.Services.Services
             try
             {
                 //UNDONE: Currency should not be hard coded
-                var account = Account.Create(dto.CustomerId, dto.Name, dto.AccountNumber, dto.AccountBearerType
+                var account = Account.Create(dto.CustomerId, dto.Name, dto.AccountNumber, dto.AccountBearerType,
                     Money.Create("KSh", dto.TransactionLimit));
 
                 await repo.Add(account);

@@ -28,4 +28,11 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj" />
+    <ProjectReference Include="..\Finance.Data\Finance.Data.csproj" />
+    <ProjectReference Include="..\Finance.Domain\Finance.Domain.csproj" />
+    <ProjectReference Include="..\Finance.Services\Finance.Services.csproj" />
+  </ItemGroup>
+
 </Project>

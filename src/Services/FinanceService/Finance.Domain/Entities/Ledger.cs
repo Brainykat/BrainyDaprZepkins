@@ -24,7 +24,7 @@ namespace Finance.Domain.Entities
             Narration = narration ?? throw new ArgumentNullException(nameof(narration));
             TransactingUser = transactingUser;
         }
-
+        private Ledger() { }
         public Guid AccountId { get; set; }
         public DateTime TxnTime { get; set; }
         public Money Credit { get; set; }
