@@ -17,7 +17,7 @@ namespace CustomerDtos
         [MaxLength(15)]
         public string Phone { get; set; }
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         [EmailAddress]
         public string Email { get; set; }
     }
