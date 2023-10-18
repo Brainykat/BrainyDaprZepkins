@@ -64,7 +64,7 @@ services:
       dockerfile: src/Services/FinanceService/Finance.API/Dockerfile
     ports:
       - "5105:80"
-      - "50001:50001"
+      - "50003:50001"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
