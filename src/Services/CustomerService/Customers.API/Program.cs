@@ -3,6 +3,7 @@ using Customers.Data;
 using HealthChecks.UI.Client;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using WebHosts.Middleware;
 
 var appName = "Customer API";
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +44,7 @@ app.MapControllers();
 app.MapSubscribeHandler();
 app.MapCustomHealthChecks("/hc", "/liveness", UIResponseWriter.WriteHealthCheckUIResponse);
 
+app.UseMiddleware<RequestLogContextMiddleware>();
 app.UseSerilogRequestLogging();
 try
 {

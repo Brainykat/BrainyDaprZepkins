@@ -34,7 +34,7 @@ services:
       dockerfile: src/Services/CustomerService/Customers.API/Dockerfile
     ports:
       - "5103:80"
-      - "50001:50001"
+      - "50001:50001" 
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
