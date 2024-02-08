@@ -38,7 +38,7 @@ public static class ProgramExtensions
             .CreateLogger();
 
         builder.Host.UseSerilog();
-        Log.Logger.Information("Starting application ->->-> {appName}", AppName);
+        //Log.Logger.Information("Starting application ->->-> {appName}", AppName);
     }
 
     public static void AddCustomSwagger(this WebApplicationBuilder builder) =>
