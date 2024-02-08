@@ -3,10 +3,12 @@ version: '3.4'
 services:
   brainykatseq:
     image: datalust/seq:latest
+    container_name: brainykat-seq
     environment:
       - ACCEPT_EULA=Y
     ports:
-      - "5340:80"
+      - "5341:5341"
+      - "8082:80"
 
   # # Use the Azure SQL Edge version so we can also run on Apple Sillicon (thanks @ChristianWeyer)
   brainykatsqldata:

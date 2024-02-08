@@ -1,4 +1,6 @@
-﻿using Customers.Data;
+﻿// Ignore Spelling: Serilog
+
+using Customers.Data;
 using Customers.Data.Repos;
 using Customers.Domain.Interfaces;
 using Customers.Services.Interfaces;
@@ -30,12 +32,13 @@ public static class ProgramExtensions
 
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(builder.Configuration)
-            .WriteTo.Console()
-            .WriteTo.Seq(seqServerUrl!)
-            .Enrich.WithProperty("ApplicationName", AppName)
+            //.WriteTo.Console()
+            //.WriteTo.Seq(seqServerUrl!)
+            //.Enrich.WithProperty("ApplicationName", AppName)
             .CreateLogger();
 
         builder.Host.UseSerilog();
+        Log.Logger.Information("Starting application ->->-> {appName}", AppName);
     }
 
     public static void AddCustomSwagger(this WebApplicationBuilder builder) =>

@@ -73,6 +73,7 @@ namespace Customers.Services.Services
         {
             try
             {
+                //throw new Exception("This is a test exception");
                 var cat = await repo.GetCustomerTracked(CustomerId);
                 if (cat == null) return NotFound();
                 await repo.Delete(cat);

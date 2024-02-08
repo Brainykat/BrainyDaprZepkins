@@ -2,6 +2,7 @@ using Customers.API;
 using Customers.Data;
 using HealthChecks.UI.Client;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var appName = "Customer API";
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +43,7 @@ app.MapControllers();
 app.MapSubscribeHandler();
 app.MapCustomHealthChecks("/hc", "/liveness", UIResponseWriter.WriteHealthCheckUIResponse);
 
+app.UseSerilogRequestLogging();
 try
 {
     app.Logger.LogInformation("Applying database migration ({ApplicationName})...", appName);
