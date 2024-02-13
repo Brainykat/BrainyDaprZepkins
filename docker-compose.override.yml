@@ -45,12 +45,12 @@ services:
     # ports:
     #   - "80"
     #   - "443"
-    environment:
-      - ASPNETCORE_URLS=http://0.0.0.0:80
-      - HealthChecksUI__HealthChecks__0__Name=Customer API
-      - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
-      - HealthChecksUI__HealthChecks__1__Name=Finance API
-      - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
+    # environment:
+    #   - ASPNETCORE_URLS=http://0.0.0.0:80
+    #   - HealthChecksUI__HealthChecks__0__Name=Customer API
+    #   - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
+    #   - HealthChecksUI__HealthChecks__1__Name=Finance API
+    #   - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
       # - HealthChecksUI__HealthChecks__2__Name=Identity API
       # - HealthChecksUI__HealthChecks__2__Uri=http://identity-api/hc
       # - HealthChecksUI__HealthChecks__3__Name=Ordering API
