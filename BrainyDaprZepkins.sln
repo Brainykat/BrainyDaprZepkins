@@ -81,9 +81,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizeAuthenticate", "sr
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F28AF0ED-F380-4E4A-96C6-86B38C042BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceDtos", "src\BuildingBlocks\Dtos\FinanceDtos\FinanceDtos.csproj", "{E24746EA-EFF8-47CA-ACF5-FC2DBB52CADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceDtos", "src\BuildingBlocks\Dtos\FinanceDtos\FinanceDtos.csproj", "{E24746EA-EFF8-47CA-ACF5-FC2DBB52CADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "src\BuildingBlocks\EventBus\EventBus.csproj", "{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\BuildingBlocks\EventBus\EventBus.csproj", "{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStatus", "src\Web\WebStatus\WebStatus.csproj", "{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -175,6 +177,10 @@ Global
 		{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +219,7 @@ Global
 		{8EE675FE-A8D2-4346-A66D-756F9AC024F5} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
 		{E24746EA-EFF8-47CA-ACF5-FC2DBB52CADA} = {C9FD1334-B284-4DC7-B5AA-3C9333249868}
 		{12B817FD-E4F5-4B00-AC14-F0ED94A73B51} = {4731D618-AD96-4498-9162-2B1CFDB6114F}
+		{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D} = {03D8F367-80A6-4CEA-A63E-09B430E31D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28AF60AF-B945-475B-B961-EB5DDF72F50B}

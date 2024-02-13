@@ -1,6 +1,16 @@
 version: '3.4'
 
 services:
+  brainykatrabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+
+  brainykatredis:
+    image: redis:alpine
+    ports:
+      - "5379:6379"
+
   brainykatseq:
     image: datalust/seq:latest
     container_name: brainykat-seq
@@ -98,7 +108,14 @@ services:
 
 
 
+  webstatus:
+    image: ${DOCKER_REGISTRY-}webstatus
+    build:
+      context: .
+      dockerfile: src/Web/WebStatus/Dockerfile
+
 volumes:
   brainykat-sqldata:
     external: false
+
 
