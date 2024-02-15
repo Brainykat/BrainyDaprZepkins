@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using BrainyDapr.BuildingBlocks.Healthchecks;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class DaprHealthCheckBuilderExtensions
 {

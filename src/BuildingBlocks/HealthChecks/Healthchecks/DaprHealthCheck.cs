@@ -1,4 +1,4 @@
-﻿namespace Microsoft.eShopOnDapr.BuildingBlocks.Healthchecks;
+﻿namespace BrainyDapr.BuildingBlocks.Healthchecks;
 
 public class DaprHealthCheck : IHealthCheck
 {
