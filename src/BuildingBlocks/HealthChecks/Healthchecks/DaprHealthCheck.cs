@@ -1,9 +1,11 @@
-﻿namespace BrainyDapr.BuildingBlocks.Healthchecks;
+﻿using Microsoft.Extensions.Logging;
+
+namespace BrainyDapr.BuildingBlocks.Healthchecks;
 
 public class DaprHealthCheck : IHealthCheck
 {
     private readonly DaprClient _daprClient;
-
+    //private  readonly ILogger _logger;
     public DaprHealthCheck(DaprClient daprClient)
     {
         _daprClient = daprClient;
@@ -13,6 +15,7 @@ public class DaprHealthCheck : IHealthCheck
         HealthCheckContext context,
         CancellationToken cancellationToken = default)
     {
+
         var healthy = await _daprClient.CheckHealthAsync(cancellationToken);
             
         if (healthy)
