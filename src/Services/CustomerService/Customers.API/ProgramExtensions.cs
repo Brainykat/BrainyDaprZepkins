@@ -7,6 +7,7 @@ using Customers.Services.Interfaces;
 using Customers.Services.Services;
 using Dapr.Client;
 using Dapr.Extensions.Configuration;
+using EventBus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
@@ -67,7 +68,7 @@ public static class ProgramExtensions
 
     public static void AddCustomApplicationServices(this WebApplicationBuilder builder)
     {
-        //builder.Services.AddScoped<IEventBus, DaprEventBus>();
+        builder.Services.AddScoped<IEventBus, DaprEventBus>();
         //builder.Services.AddScoped<OrderStatusChangedToAwaitingStockValidationIntegrationEventHandler>();
         //builder.Services.AddScoped<OrderStatusChangedToPaidIntegrationEventHandler>();
         builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();

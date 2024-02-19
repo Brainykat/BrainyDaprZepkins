@@ -2,6 +2,8 @@
 using Customers.Domain.Entities;
 using Customers.Domain.Interfaces;
 using Customers.Services.Interfaces;
+using EventBus;
+using EventBus.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SharedBase.ValueObjects;
@@ -14,14 +16,15 @@ namespace Customers.Services.Services
     public class CustomerService : ControllerBase, ICustomerService
     {
         private readonly ICustomerRepository repo;
-        //private readonly IRaiseBGCustomerEvents raiseBGCustomerEvents;
+        private readonly IEventBus _eventBus;
         private readonly ILogger<CustomerService> logger;
         public CustomerService(ICustomerRepository repo, ILogger<CustomerService> logger
-
+, IEventBus eventBus
             )
         {
             this.repo = repo ?? throw new ArgumentNullException(nameof(repo));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _eventBus = eventBus;
             //this.raiseBGCustomerEvents = raiseBGCustomerEvents ?? throw new ArgumentNullException(nameof(raiseBGCustomerEvents));
         }
         public async Task<Customer> GetCustomer(Guid id) => await repo.GetCustomer(id);
@@ -33,16 +36,9 @@ namespace Customers.Services.Services
                 var customer = Customer.Create(Name.Create(dto.SurName, dto.FirstName, dto.MiddleName), dto.Phone, dto.Email);
 
                 await repo.Add(customer);
-                //var user = new UserEBDto(Customer.Name, Customer.Email, Customer.Phone, DateTime.Now.AddDays(7), Customer.Id,
-                //        new List<string> { "BGCustomerAdmin" },
-                //        new List<ClaimEBDto> {
-                //    new ClaimEBDto { Type = "BGCustomerId", Value = Customer.Id.ToString() }
-                //    //new ClaimEBDto { Type = "AgencyBranchId", Value = bb.Id.ToString() }
-                //          }
-                //       );
+                var eventMessage = new CustomerEBDto(customer.Id, customer.Name.FullName );
 
-                //var two = raiseBGCustomerEvents.RaiseBGCustomerAdminCreation(user);
-                //if (!two) logger.LogCritical($"Could not raise BGCustomer Admin User Creation Event: {user.Serialize()}");
+                await _eventBus.PublishAsync(eventMessage);
                 return Ok(customer);
             }
             catch (Exception ex)
