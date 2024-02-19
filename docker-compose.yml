@@ -55,14 +55,15 @@ services:
     
 
   customers-api-dapr:
-    image: "daprio/daprd:latest"
+    #image: "daprio/daprd:latest"
+    image: "daprio/daprd:1.9.4"
+    network_mode: "service:customers-api"
     command: ["./daprd",
       "-app-id", "customers-api",
       "-app-port", "80",
       "-components-path", "/components",
       "-config", "/configuration/brainykat-config.yaml"
-      ]
-    network_mode: "service:customers-api"
+      ]    
     depends_on:
       - customers-api
     volumes:
@@ -86,7 +87,8 @@ services:
       - brainykatsqldata
   
   finance-api-dapr:
-    image: "daprio/daprd:latest"
+    #image: "daprio/daprd:latest"
+    image: "daprio/daprd:1.9.4"
     command: ["./daprd",
       "-app-id", "finance-api",
       "-app-port", "80",
@@ -113,6 +115,17 @@ services:
     build:
       context: .
       dockerfile: src/Web/WebStatus/Dockerfile
+    ports:
+      - "5107:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - HealthChecksUI__HealthChecks__0__Name=Customers API
+      - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
+      - HealthChecksUI__HealthChecks__1__Name=Finance API
+      - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
 
 volumes:
   brainykat-sqldata:

@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{A60C3AE5-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{022D54AB-DC25-4721-BA0A-233BDAB3CD0E}"
 	ProjectSection(SolutionItems) = preProject
-		brainykat-secrets.json = brainykat-secrets.json
 		dapr\components\brainykat-secrets.json = dapr\components\brainykat-secrets.json
 		dapr\components\brainykat-secretstore.yaml = dapr\components\brainykat-secretstore.yaml
 	EndProjectSection
@@ -85,7 +84,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceDtos", "src\Building
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\BuildingBlocks\EventBus\EventBus.csproj", "{12B817FD-E4F5-4B00-AC14-F0ED94A73B51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStatus", "src\Web\WebStatus\WebStatus.csproj", "{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStatus", "src\Web\WebStatus\WebStatus.csproj", "{4808F2EF-9BCC-48F4-8A7A-B81DAA56E91D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

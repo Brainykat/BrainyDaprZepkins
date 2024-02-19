@@ -34,7 +34,7 @@ public static class ProgramExtensions
             .ReadFrom.Configuration(builder.Configuration)
             //.WriteTo.Console()
             //.WriteTo.Seq(seqServerUrl!)
-            //.Enrich.WithProperty("ApplicationName", AppName)
+            .Enrich.WithProperty("ApplicationName", AppName)
             .CreateLogger();
 
         builder.Host.UseSerilog();
@@ -59,11 +59,11 @@ public static class ProgramExtensions
     public static void AddCustomHealthChecks(this WebApplicationBuilder builder) =>
         builder.Services.AddHealthChecks()
             .AddCheck("self", () => HealthCheckResult.Healthy())
-            .AddDapr()
-            .AddSqlServer(
-                builder.Configuration["ConnectionStrings:CustomerDB"]!,
-                name: "CustomerDB-check",
-                tags: new[] { "customerdb" });
+            .AddDapr();
+            //.AddSqlServer(
+            //    builder.Configuration["ConnectionStrings:CustomerDB"]!,
+            //    name: "CustomerDB-check",
+            //    tags: new[] { "customerdb" });
 
     public static void AddCustomApplicationServices(this WebApplicationBuilder builder)
     {
