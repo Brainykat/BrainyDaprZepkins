@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddCustomConfiguration();
 builder.AddCustomSerilog();
 builder.AddCustomSwagger();
+builder.AddCustomMvc();
 builder.AddCustomHealthChecks();
 builder.AddCustomApplicationServices();
 builder.AddCustomDatabase();

@@ -56,7 +56,11 @@ public static class ProgramExtensions
             c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{AppName} V1");
         });
     }
-
+    public static void AddCustomMvc(this WebApplicationBuilder builder)
+    {
+        // TODO DaprClient good enough?
+        builder.Services.AddControllers().AddDapr();
+    }
     public static void AddCustomHealthChecks(this WebApplicationBuilder builder) =>
         builder.Services.AddHealthChecks()
             .AddCheck("self", () => HealthCheckResult.Healthy())
@@ -71,6 +75,7 @@ public static class ProgramExtensions
         builder.Services.AddScoped<IEventBus, DaprEventBus>();
         //builder.Services.AddScoped<OrderStatusChangedToAwaitingStockValidationIntegrationEventHandler>();
         //builder.Services.AddScoped<OrderStatusChangedToPaidIntegrationEventHandler>();
+        builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
         builder.Services.AddTransient<ICustomerService, CustomerService>();
     }

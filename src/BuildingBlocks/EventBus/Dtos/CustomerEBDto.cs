@@ -1,5 +1,5 @@
 ﻿namespace EventBus.Dtos
 {
-    public record CustomerEBDto(Guid id,string Name): IntegrationEvent;
+    public record CustomerEBDto(Guid customerId,string Name): IntegrationEvent;
     
 }
