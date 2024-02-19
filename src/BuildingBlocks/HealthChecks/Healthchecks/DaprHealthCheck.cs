@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace BrainyDapr.BuildingBlocks.Healthchecks;
+namespace BrainyDaprZepkins.BuildingBlocks.Healthchecks;
 
 public class DaprHealthCheck : IHealthCheck
 {
