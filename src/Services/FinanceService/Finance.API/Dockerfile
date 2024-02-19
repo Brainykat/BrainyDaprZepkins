@@ -1,11 +1,12 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+ARG NET_IMAGE=7.0-bullseye-slim
+FROM mcr.microsoft.com/dotnet/aspnet:${NET_IMAGE} AS base
+#FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:${NET_IMAGE} AS build
 WORKDIR /src
 COPY ["src/Services/FinanceService/Finance.API/Finance.API.csproj", "src/Services/FinanceService/Finance.API/"]
 COPY ["src/BuildingBlocks/HealthChecks/Healthchecks/Healthchecks.csproj", "src/BuildingBlocks/HealthChecks/Healthchecks/"]
