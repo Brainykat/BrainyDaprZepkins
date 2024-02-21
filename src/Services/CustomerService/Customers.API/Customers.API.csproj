@@ -59,6 +59,7 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\HealthChecks\Healthchecks\Healthchecks.csproj" />
     <ProjectReference Include="..\Customers.Data\Customers.Data.csproj" />
+    <ProjectReference Include="..\Customers.Domain\Customers.Domain.csproj" />
     <ProjectReference Include="..\Customers.Services\Customers.Services.csproj" />
   </ItemGroup>
 
