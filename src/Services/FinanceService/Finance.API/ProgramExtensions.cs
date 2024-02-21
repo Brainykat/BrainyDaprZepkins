@@ -1,8 +1,10 @@
 ﻿using Dapr.Client;
 using Dapr.Extensions.Configuration;
+using EventBus;
 using Finance.Data;
 using Finance.Data.Repos;
 using Finance.Domain.Interfaces;
+using Finance.Services.IntegrationEvents;
 using Finance.Services.Interfaces;
 using Finance.Services.Services;
 using Microsoft.EntityFrameworkCore;
@@ -64,7 +66,8 @@ namespace Finance.API
 
         public static void AddCustomApplicationServices(this WebApplicationBuilder builder)
         {
-            //builder.Services.AddScoped<IEventBus, DaprEventBus>();
+            builder.Services.AddScoped<IEventBus, DaprEventBus>();
+            builder.Services.AddScoped<NewCustomerCreatedIntegrationEventHandler>();
             //builder.Services.AddScoped<OrderStatusChangedToAwaitingStockValidationIntegrationEventHandler>();
             //builder.Services.AddScoped<OrderStatusChangedToPaidIntegrationEventHandler>();
             builder.Services.AddTransient<IAccountRepository, AccountRepository>();

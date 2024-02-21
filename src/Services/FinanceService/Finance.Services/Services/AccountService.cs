@@ -33,16 +33,6 @@ namespace Finance.Services.Services
                     Money.Create("KSh", dto.TransactionLimit));
 
                 await repo.Add(account);
-                //var user = new UserEBDto(Account.Name, Account.Email, Account.Phone, DateTime.Now.AddDays(7), Account.Id,
-                //        new List<string> { "BGAccountAdmin" },
-                //        new List<ClaimEBDto> {
-                //    new ClaimEBDto { Type = "BGAccountId", Value = Account.Id.ToString() }
-                //    //new ClaimEBDto { Type = "AgencyBranchId", Value = bb.Id.ToString() }
-                //          }
-                //       );
-
-                //var two = raiseBGAccountEvents.RaiseBGAccountAdminCreation(user);
-                //if (!two) logger.LogCritical($"Could not raise BGAccount Admin User Creation Event: {user.Serialize()}");
                 return Ok(account);
             }
             catch (Exception ex)
