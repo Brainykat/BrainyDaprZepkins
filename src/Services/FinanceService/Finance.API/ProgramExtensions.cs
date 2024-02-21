@@ -20,7 +20,7 @@ namespace Finance.API
         public static void AddCustomConfiguration(this WebApplicationBuilder builder)
         {
             builder.Configuration.AddDaprSecretStore(
-               "brainydapr-secretstore",
+               "brainykatdapr-secretstore",
                new DaprClientBuilder().Build());
         }
 
