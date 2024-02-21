@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 		dapr\components\brainykat-pubsub.yaml = dapr\components\brainykat-pubsub.yaml
 		dapr\components\brainykat-secrets.json = dapr\components\brainykat-secrets.json
 		dapr\components\brainykat-secretstore.yaml = dapr\components\brainykat-secretstore.yaml
+		dapr\components\brainykat-statestore.yaml = dapr\components\brainykat-statestore.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{F285F59C-BC86-4DDD-9CE9-E797E7A96F07}"
