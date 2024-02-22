@@ -68,7 +68,7 @@ version: '3.4'
 #       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
 services:
-  webbff.api:
+  webbff-api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - IdentityUrl=http://identity-api
