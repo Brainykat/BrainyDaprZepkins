@@ -66,3 +66,20 @@ version: '3.4'
 #     volumes:
 #       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 #       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+services:
+  webbff.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - IdentityUrl=http://identity-api
+      - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
+      - SeqServerUrl=http://seq
+      - BasketUrlHC=http://customers-api/hc
+      - CatalogUrlHC=http://finance-api/hc
+      #- IdentityUrlHC=http://identity-api/hc
+    ports:
+      - "5121:80"
+      - "50007:50001"
+    # volumes:
+    #   - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    #   - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

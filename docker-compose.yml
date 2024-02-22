@@ -130,9 +130,36 @@ services:
       - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
       - HealthChecksUI__HealthChecks__1__Name=Finance API
       - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
+      - HealthChecksUI__HealthChecks__2__Name=Web BFF Aggregator
+      - HealthChecksUI__HealthChecks__2__Uri=http://webbff-api/hc
+
+  webbff-api:
+    image: ${DOCKER_REGISTRY-}webbffapi
+    build:
+      context: .
+      dockerfile: src/APIGateways/Aggregators/WebBff.API/Dockerfile
+    depends_on:
+      - customers-api
+      - finance-api
+
+  webaggapi-dapr:
+    image: "daprio/daprd:1.9.4"
+    network_mode: "service:webbff-api"
+    command: ["./daprd",
+      "-app-id", "webbff-api",
+      "-app-port", "80",
+      "-components-path", "/components",
+      "-config", "/configuration/brainykat-config.yaml"
+      ]
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configuration/:/configuration"
+    depends_on:
+      - webbff-api
 
 volumes:
   brainykat-sqldata:
     external: false
+
 
 

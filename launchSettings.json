@@ -6,7 +6,8 @@
       "serviceActions": {
         "customers.api": "StartDebugging",
         "finance.api": "StartDebugging",
-        "webstatus": "StartDebugging"
+        "webstatus": "StartDebugging",
+        "webbff.api": "StartDebugging"
       }
     }
   }
