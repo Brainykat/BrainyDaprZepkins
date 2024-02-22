@@ -17,15 +17,15 @@ namespace WebBff.API.Controllers
         [HttpGet()]
         [ProducesResponseType(typeof(List<CustomerView>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Get([FromHeader] string authorization) =>
-      Ok(await service.GetCustomersAsync(authorization));
+        public async Task<IActionResult> Get() =>
+      Ok(await service.GetCustomersAsync());
 
         [HttpGet("{customerId:guid}")]
         [ProducesResponseType(typeof(CustomerView), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Get(Guid customerId, [FromHeader] string authorization) =>
-      Ok(await service.GetCustomerAsync(customerId, authorization));
+        public async Task<IActionResult> Get(Guid customerId) =>
+      Ok(await service.GetCustomerAsync(customerId));
 
         [HttpPost]
         //[HttpPut]
@@ -35,10 +35,9 @@ namespace WebBff.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> Post(
-        [FromBody] CustomerDto dto,
-        [FromHeader] string authorization)
+        [FromBody] CustomerDto dto)
         {
-            return await service.PostAsync(dto, authorization);
+            return await service.PostAsync(dto);
         }
 
         [HttpPut("{customerId:guid}")]
@@ -46,16 +45,15 @@ namespace WebBff.API.Controllers
         [ProducesResponseType(typeof(CustomerView), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> Put(Guid customerId,
-        [FromBody] CustomerDto dto,
-        [FromHeader] string authorization)
+        [FromBody] CustomerDto dto)
         {
-            return await service.UpdateAsync(customerId, dto, authorization);
+            return await service.UpdateAsync(customerId, dto);
         }
 
         [HttpDelete("{customerId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete(Guid customerId, [FromHeader] string authorization) =>
-            await service.DeleteAsync(customerId,authorization);
+        public async Task<IActionResult> Delete(Guid customerId) =>
+            await service.DeleteAsync(customerId);
     }
 }

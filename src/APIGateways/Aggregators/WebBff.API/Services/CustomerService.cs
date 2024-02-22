@@ -15,53 +15,53 @@ namespace WebBff.API.Services
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             //_logger = logger;
         }
-        public Task<IEnumerable<CustomerView>?> GetCustomersAsync(string accessToken)
+        public Task<IEnumerable<CustomerView>?> GetCustomersAsync()
         {
             var requestUri = $"api/customers/GetCustomers";
-            _httpClient.DefaultRequestHeaders.Authorization =
-                        new AuthenticationHeaderValue("Bearer", accessToken);
+            //_httpClient.DefaultRequestHeaders.Authorization =
+            //            new AuthenticationHeaderValue("Bearer", accessToken);
             return _httpClient.GetFromJsonAsync<IEnumerable<CustomerView>>(requestUri);
         }
-        public Task<CustomerView?> GetCustomerAsync(Guid customerId, string accessToken)
+        public Task<CustomerView?> GetCustomerAsync(Guid customerId)
         {
             var requestUri = $"api/customers/GetCustomers/{customerId}";
-            _httpClient.DefaultRequestHeaders.Authorization =
-                        new AuthenticationHeaderValue("Bearer", accessToken);
+            //_httpClient.DefaultRequestHeaders.Authorization =
+            //            new AuthenticationHeaderValue("Bearer", accessToken);
             return _httpClient.GetFromJsonAsync<CustomerView>(requestUri);
         }
-        public async Task<IActionResult> PostAsync(CustomerDto dto, string accessToken)
+        public async Task<IActionResult> PostAsync(CustomerDto dto)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, "api/customers/Add")
             {
                 Content = JsonContent.Create(dto)
             };
 
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await _httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
             return new HttpResponseMessageService(response);
         }
-        public async Task<IActionResult> UpdateAsync(Guid customerId, CustomerDto dto, string accessToken)
+        public async Task<IActionResult> UpdateAsync(Guid customerId, CustomerDto dto)
         {
             var request = new HttpRequestMessage(HttpMethod.Put, $"api/customers/update/{customerId}")
             {
                 Content = JsonContent.Create(dto)
             };
 
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await _httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
             return new HttpResponseMessageService(response);
         }
-        public async Task<IActionResult> DeleteAsync(Guid customerId, string accessToken)
+        public async Task<IActionResult> DeleteAsync(Guid customerId)
         {
             //try
             //{
                 //var token = Request.Headers.FirstOrDefault(h => h.Key == "Authorization").Value.ToString();
-                _httpClient.DefaultRequestHeaders.Authorization =
-                        new AuthenticationHeaderValue("Bearer", accessToken);
+                //_httpClient.DefaultRequestHeaders.Authorization =
+                //        new AuthenticationHeaderValue("Bearer", accessToken);
                 var response = await _httpClient.DeleteAsync($"api/customers/Delete/{customerId}");
                 this.HttpContext.Response.RegisterForDispose(response);
                 return new HttpResponseMessageService(response);
