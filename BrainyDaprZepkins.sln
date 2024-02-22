@@ -27,6 +27,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aggregators", "Aggregators", "{D77FFE7E-9A3B-4C89-A4E7-EB15CEE8838A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Envoy", "Envoy", "{072CC8AC-79C5-49DE-BC27-609F08A7E447}"
+	ProjectSection(SolutionItems) = preProject
+		src\APIGateways\Envoy\docker-entrypoint.sh = src\APIGateways\Envoy\docker-entrypoint.sh
+		src\APIGateways\Envoy\Dockerfile = src\APIGateways\Envoy\Dockerfile
+		src\APIGateways\Envoy\envoy.yaml = src\APIGateways\Envoy\envoy.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{4731D618-AD96-4498-9162-2B1CFDB6114F}"
 EndProject

@@ -106,33 +106,6 @@ services:
       - "./dapr/components/:/components"
       - "./dapr/configuration/:/configuration"
 
-  dapr-placement:
-    image: "daprio/dapr:latest"
-    command: ["./placement", "-port", "50000", "-log-level", "debug"]
-    ports:
-      - "50000:50000"
-
-
-
-  webstatus:
-    image: ${DOCKER_REGISTRY-}webstatus
-    build:
-      context: .
-      dockerfile: src/Web/WebStatus/Dockerfile
-    ports:
-      - "5107:80"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    environment:
-      - ASPNETCORE_URLS=http://0.0.0.0:80
-      - HealthChecksUI__HealthChecks__0__Name=Customers API
-      - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
-      - HealthChecksUI__HealthChecks__1__Name=Finance API
-      - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
-      - HealthChecksUI__HealthChecks__2__Name=Web BFF Aggregator
-      - HealthChecksUI__HealthChecks__2__Uri=http://webbff-api/hc
-
   webbff-api:
     image: ${DOCKER_REGISTRY-}webbffapi
     build:
@@ -156,6 +129,45 @@ services:
       - "./dapr/configuration/:/configuration"
     depends_on:
       - webbff-api
+
+  webbffapigw:
+    image: ${REGISTRY:-eshopdapr}/webbffapigw:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/ApiGateways/Envoy/Dockerfile
+
+  webbffapigw-dapr:
+    image: "daprio/daprd:1.9.4"
+    network_mode: "service:webbffapigw"
+    depends_on:
+      - webbffapigw
+
+  webstatus:
+    image: ${DOCKER_REGISTRY-}webstatus
+    build:
+      context: .
+      dockerfile: src/Web/WebStatus/Dockerfile
+    ports:
+      - "5107:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - HealthChecksUI__HealthChecks__0__Name=Customers API
+      - HealthChecksUI__HealthChecks__0__Uri=http://customers-api/hc
+      - HealthChecksUI__HealthChecks__1__Name=Finance API
+      - HealthChecksUI__HealthChecks__1__Uri=http://finance-api/hc
+      - HealthChecksUI__HealthChecks__2__Name=Web BFF Aggregator
+      - HealthChecksUI__HealthChecks__2__Uri=http://webbff-api/hc 
+
+
+  dapr-placement:
+    image: "daprio/dapr:latest"
+    command: ["./placement", "-port", "50000", "-log-level", "debug"]
+    ports:
+      - "50000:50000"
+        
 
 volumes:
   brainykat-sqldata:
