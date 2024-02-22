@@ -2,7 +2,7 @@
 
 namespace CustomerDtos
 {
-    public class CustomerView
+    public class CustomerView : ViewBase
     {
         public NameView Name { get; set; }
         public string Phone { get; set; }
