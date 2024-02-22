@@ -1,6 +1,4 @@
 ﻿using CustomerDtos;
-using Google.Api;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using WebBff.API.Interfaces;

@@ -1,25 +1,52 @@
+using HealthChecks.UI.Client;
+using WebBff.API;
+
+var appName = "Web Aggregator API";
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.AddCustomSerilog();
+builder.AddCustomSwagger();
+builder.AddCustomAuthentication();
+builder.AddCustomAuthorization();
+builder.AddCustomHealthChecks();
+builder.AddCustomApplicationServices();
 
+builder.Services.AddDaprClient();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+    app.UseCustomSwagger();
 }
 
-app.UseHttpsRedirection();
+var pathBase = builder.Configuration["PATH_BASE"];
+if (!string.IsNullOrEmpty(pathBase))
+{
+    app.UsePathBase(pathBase);
+}
 
+app.UseCloudEvents();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapGet("/", () => Results.LocalRedirect("~/swagger"));
 app.MapControllers();
+app.MapCustomHealthChecks("/hc", "/liveness", UIResponseWriter.WriteHealthCheckUIResponse);
 
-app.Run();
+try
+{
+    app.Logger.LogInformation("Starting web host ({ApplicationName})...", appName);
+    app.Run();
+}
+catch (Exception ex)
+{
+    app.Logger.LogCritical(ex, "Host terminated unexpectedly ({ApplicationName})...", appName);
+}
+finally
+{
+    Serilog.Log.CloseAndFlush();
+}
