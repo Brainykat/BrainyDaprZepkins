@@ -31,26 +31,26 @@ namespace WebBff.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = $"BrainykatOnDapr - {AppName}", Version = "v1" });
 
-                var identityUrlExternal = builder.Configuration.GetValue<string>("IdentityUrlExternal");
+                //var identityUrlExternal = builder.Configuration.GetValue<string>("IdentityUrlExternal");
 
-                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-                {
-                    Type = SecuritySchemeType.OAuth2,
-                    Flows = new OpenApiOAuthFlows()
-                    {
-                        Implicit = new OpenApiOAuthFlow()
-                        {
-                            AuthorizationUrl = new Uri($"{identityUrlExternal}/connect/authorize"),
-                            TokenUrl = new Uri($"{identityUrlExternal}/connect/token"),
-                            Scopes = new Dictionary<string, string>()
-                            {
-                                { "webaggr-api", AppName }
-                            }
-                        }
-                    }
-                });
+                //c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                //{
+                //    Type = SecuritySchemeType.OAuth2,
+                //    Flows = new OpenApiOAuthFlows()
+                //    {
+                //        Implicit = new OpenApiOAuthFlow()
+                //        {
+                //            AuthorizationUrl = new Uri($"{identityUrlExternal}/connect/authorize"),
+                //            TokenUrl = new Uri($"{identityUrlExternal}/connect/token"),
+                //            Scopes = new Dictionary<string, string>()
+                //            {
+                //                { "webaggr-api", AppName }
+                //            }
+                //        }
+                //    }
+                //});
 
-                c.OperationFilter<AuthorizeCheckOperationFilter>();
+                //c.OperationFilter<AuthorizeCheckOperationFilter>();
             });
         }
 

@@ -74,8 +74,8 @@ services:
       - IdentityUrl=http://identity-api
       - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
       - SeqServerUrl=http://seq
-      - BasketUrlHC=http://customers-api/hc
-      - CatalogUrlHC=http://finance-api/hc
+      - CustomerUrlHC=http://customers-api/hc
+      - FinanceUrlHC=http://finance-api/hc
       #- IdentityUrlHC=http://identity-api/hc
     ports:
       - "5121:80"

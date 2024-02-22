@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddCustomSerilog();
 builder.AddCustomSwagger();
-builder.AddCustomAuthentication();
-builder.AddCustomAuthorization();
+//builder.AddCustomAuthentication();
+//builder.AddCustomAuthorization();
 builder.AddCustomHealthChecks();
 builder.AddCustomApplicationServices();
 
@@ -30,8 +30,8 @@ if (!string.IsNullOrEmpty(pathBase))
 
 app.UseCloudEvents();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapGet("/", () => Results.LocalRedirect("~/swagger"));
 app.MapControllers();
