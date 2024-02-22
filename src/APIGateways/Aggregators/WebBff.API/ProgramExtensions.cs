@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using WebBff.API.Filters;
+using WebBff.API.Interfaces;
 using WebBff.API.Services;
 
 namespace WebBff.API
@@ -103,8 +104,8 @@ namespace WebBff.API
             builder.Services.AddSingleton<ICustomerService, CustomerService>(
                 _ => new CustomerService(DaprClient.CreateInvokeHttpClient("customers-api")));
 
-            builder.Services.AddSingleton<IFinanceService, FinanceService>(
-                _ => new FinanceService(DaprClient.CreateInvokeHttpClient("finance-api")));
+            //builder.Services.AddSingleton<IFinanceService, FinanceService>(
+            //    _ => new FinanceService(DaprClient.CreateInvokeHttpClient("finance-api")));
         }
     }
 }
