@@ -24,7 +24,7 @@ namespace WebBff.API.Services
         }
         public Task<CustomerView?> GetCustomerAsync(Guid customerId)
         {
-            var requestUri = $"api/customers/GetCustomers/{customerId}";
+            var requestUri = $"api/customers/GetCustomer/{customerId}";
             //_httpClient.DefaultRequestHeaders.Authorization =
             //            new AuthenticationHeaderValue("Bearer", accessToken);
             return _httpClient.GetFromJsonAsync<CustomerView>(requestUri);
